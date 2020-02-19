@@ -56,5 +56,10 @@ create table conta(
 );
 
 create table lancamento(
-    
+    num_conta number(8),
+    datahora date not null,
+    descricao varchar2(120),
+    constraint pk_dt_lan primary key (datahora, num_conta),
+    constraint fk_lan_cc foreing key (num_conta)
+        references conta(num_conta)
 );
