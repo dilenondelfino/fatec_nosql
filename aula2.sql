@@ -69,7 +69,7 @@ create table lancamento(
     datahora date not null,
     descricao varchar2(120),
     valor number(10,2) not null,
-    constraint pk_dt_lan primary key (datahora, num_conta, num_ag),
+    constraint pk_dt_lan primary key (datahora, num_conta, num_ag, num_banco),
     constraint fk_lan_cc foreign key (num_conta, num_ag, num_banco)
         references conta(num_conta, num_ag, num_banco)
 );
